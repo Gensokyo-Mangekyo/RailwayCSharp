@@ -16,6 +16,7 @@ namespace Railway
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Startup.onInit();
             Application.Run(new Form1());
         }
     }

@@ -54,7 +54,7 @@
             // 
             // FolderTextBox
             // 
-            this.FolderTextBox.Location = new System.Drawing.Point(24, 64);
+            this.FolderTextBox.Location = new System.Drawing.Point(44, 41);
             this.FolderTextBox.Name = "FolderTextBox";
             this.FolderTextBox.Size = new System.Drawing.Size(100, 22);
             this.FolderTextBox.TabIndex = 3;

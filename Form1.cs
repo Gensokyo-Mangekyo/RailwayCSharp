@@ -13,10 +13,10 @@ namespace Railway
 {
     public partial class Form1 : Form
     {
-       internal Configuration Config { get; set; }
+        internal readonly Configuration Config;
         public Form1()
         {
-            Config = new Configuration();
+            Config = Startup.configuration;
             InitializeComponent();
         }
 
