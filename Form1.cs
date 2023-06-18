@@ -20,11 +20,6 @@ namespace Railway
             InitializeComponent();
         }
 
-        private async void Form1_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog dialog = new FolderBrowserDialog())
@@ -53,6 +48,40 @@ namespace Railway
                     MessageBox.Show("Такой каталог поезда уже существует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else MessageBox.Show("Некоректный ввод данных","Ошибка",MessageBoxButtons.OK,MessageBoxIcon.Error);
+        }
+
+        private string CheckNetworkPath()
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.ValidateNames = false;
+                openFileDialog.CheckFileExists = false;
+                openFileDialog.CheckPathExists = true;
+                openFileDialog.FileName = "Выбирете сетевой путь";
+                DialogResult dialogResult = openFileDialog.ShowDialog();
+
+                if (dialogResult == DialogResult.OK)
+                {
+ 
+
+                    if (openFileDialog.FileName.StartsWith("\\"))
+                    {
+                        return openFileDialog.FileName.Remove(openFileDialog.FileName.LastIndexOf('\\'));
+                    }
+                    else MessageBox.Show("Некоректный cетевой путь", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return null;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Config.SaveG1(CheckNetworkPath());
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Config.SaveG2(CheckNetworkPath());
         }
     }
 }
