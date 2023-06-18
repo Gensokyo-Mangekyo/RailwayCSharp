@@ -8,6 +8,7 @@ namespace Railway
     internal class Configuration
     {
         public string Path { get; set; }
+
      
         public void SavePath (string path)
         {

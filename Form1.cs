@@ -25,26 +25,6 @@ namespace Railway
             
         }
 
-        private async void button1_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace("") && string.IsNullOrWhiteSpace(FolderTextBox.Text))
-            {
-                if (Directory.Exists(Config.Path))
-                {
-                    string DirectoryString = Config.Path  + @"\" + FolderTextBox.Text;
-                    Directory.CreateDirectory(DirectoryString);
-                  
-                }
-                else MessageBox.Show("Неверно указана директория", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else MessageBox.Show("Данные не введены!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog dialog = new FolderBrowserDialog())
@@ -56,6 +36,23 @@ namespace Railway
                 }
             }
             
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {   
+            if (NumberTrainBox.Text != "" && FolderNameBox.Text != "")
+            {
+                string TrainFolder = "\\ЭПЗД " + NumberTrainBox.Text + " за " + dateTimePicker1.Value.ToString("d");
+                string Result = TrainFolder + "\\" + FolderNameBox.Text;
+                if (!Directory.Exists(Config.Path + TrainFolder))
+                {
+                    Directory.CreateDirectory(Config.Path + Result);
+                    MessageBox.Show($"Каталог {Result} создан успешно ", "Информация");
+                }
+                else
+                    MessageBox.Show("Такой каталог поезда уже существует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else MessageBox.Show("Некоректный ввод данных","Ошибка",MessageBoxButtons.OK,MessageBoxIcon.Error);
         }
     }
 }
