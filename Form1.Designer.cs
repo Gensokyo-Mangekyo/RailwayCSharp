@@ -122,7 +122,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Arial Narrow", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.button1.Location = new System.Drawing.Point(499, 12);
+
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(289, 31);
             this.button1.TabIndex = 11;
@@ -133,7 +135,9 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Arial Narrow", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.button4.Location = new System.Drawing.Point(499, 49);
+
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(289, 31);
             this.button4.TabIndex = 12;
