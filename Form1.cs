@@ -83,5 +83,14 @@ namespace Railway
         {
             Config.SaveG2(CheckNetworkPath());
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (Config.G1== null)
+            {
+                MessageBox.Show("Не настроен сетевой путь СВН Г1", "Ошибка конфигурации", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
     }
 }
