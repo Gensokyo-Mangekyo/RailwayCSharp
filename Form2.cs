@@ -16,6 +16,7 @@ namespace Railway
         string Path = "";
         string year = "";
         string number = "";
+        string cabina = "";
         public Form2()
         {
             InitializeComponent();
@@ -26,6 +27,12 @@ namespace Railway
             InitializeComponent();
             Path = s;
             listBox1.Items.AddRange(GetNamesDirectory(Path));
+            if (Startup.configuration.Path != "")
+            {
+                listBox4.Items.AddRange(GetNamesDirectory(Startup.configuration.Path));
+                if (listBox4.Items.Count > 0)
+                    listBox4.SelectedItem = listBox4.Items[0];
+            }
         }
 
         string[] GetNamesDirectory(string directory)
@@ -37,14 +44,51 @@ namespace Railway
             }
             return dirs;
         }
+        bool CheckTimeStart(string s, string s1)
+        {
+            string[] ArrCheck = s.Split('_');
+            string[] ArrStart = s1.Split(':');
+            if (int.Parse(ArrCheck[0]) > int.Parse(ArrStart[0]))
+                return true;
+            if (int.Parse(ArrCheck[1]) >= int.Parse(ArrStart[1]) && int.Parse(ArrCheck[0]) == int.Parse(ArrStart[0]))
+                return true;
+            return false;
+        }
+
+        bool CheckTimeEnd(string s, string s1)
+        {
+            string[] ArrCheck = s.Split('_');
+            string[] ArrStart = s1.Split(':');
+            if (int.Parse(ArrCheck[0]) < int.Parse(ArrStart[0]))
+                return true;
+            if (int.Parse(ArrCheck[1]) <= int.Parse(ArrStart[1]) && int.Parse(ArrCheck[0]) == int.Parse(ArrStart[0]))
+            return true;
+            return false;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string[] Limit1 = maskedTextBox1.Text.Split(':');
-            string[] Limit2 = maskedTextBox1.Text.Split(':');
-            foreach (var item in listBox3.Items)
+            string limit1 = maskedTextBox1.Text;
+            string limit2 = maskedTextBox2.Text;
+            try
             {
-
+                List<string> Results = new List<string>();
+                for (int i = 0; i < listBox3.Items.Count; i++)
+                {
+                    if (CheckTimeStart(listBox3.Items[i].ToString(), limit1) && CheckTimeEnd(listBox3.Items[i].ToString(), limit2))
+                    {
+                        Results.Add(listBox3.Items[i].ToString());
+                    }
+                }
+                foreach (var item in Results)
+                {
+                   string file = $"{Path}\\{year}\\{number}\\{cabina}\\{item}.mp4";
+                    File.Copy(file, Startup.configuration.Path + "\\" + listBox4.SelectedItem.ToString() + "\\Кабина\\" + $"{item}.mp4");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Возникла ошибка в процессе выполнения программы: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -64,6 +108,7 @@ namespace Railway
             {
                 if (item.EndsWith("K"))
                 {
+                    cabina = item.Remove(0, item.LastIndexOf('\\') + 1);
                     listBox3.Items.Clear();
                     string[] files = Directory.GetFiles(item);
                     for (int i = 0; i < files.Length; i++)
@@ -78,5 +123,11 @@ namespace Railway
             MessageBox.Show("Папка с машинистами не найдена!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var form = new Form1();
+            form.Show();
+            Close();
+        }
     }
 }

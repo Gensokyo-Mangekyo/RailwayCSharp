@@ -42,6 +42,7 @@
             this.listBox4 = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -63,7 +64,7 @@
             this.listBox1.ItemHeight = 30;
             this.listBox1.Location = new System.Drawing.Point(12, 37);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(106, 184);
+            this.listBox1.Size = new System.Drawing.Size(120, 184);
             this.listBox1.TabIndex = 10;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -99,7 +100,7 @@
             this.listBox3.ItemHeight = 26;
             this.listBox3.Location = new System.Drawing.Point(421, 37);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(106, 186);
+            this.listBox3.Size = new System.Drawing.Size(128, 186);
             this.listBox3.TabIndex = 13;
             // 
             // label3
@@ -162,8 +163,6 @@
             this.listBox4.Font = new System.Drawing.Font("Bodoni MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox4.FormattingEnabled = true;
             this.listBox4.ItemHeight = 28;
-            this.listBox4.Items.AddRange(new object[] {
-            "ЭПЗД 01 за 18.06.2023"});
             this.listBox4.Location = new System.Drawing.Point(567, 35);
             this.listBox4.Name = "listBox4";
             this.listBox4.Size = new System.Drawing.Size(187, 172);
@@ -191,6 +190,17 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("CCWildWordsLower", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(682, 394);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(106, 44);
+            this.button2.TabIndex = 23;
+            this.button2.Text = "Назад";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,6 +208,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.listBox4);
@@ -233,5 +244,6 @@
         private System.Windows.Forms.ListBox listBox4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

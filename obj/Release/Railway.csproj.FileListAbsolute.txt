@@ -1,0 +1,12 @@
+C:\Users\Администратор\Desktop\C#\Railway\Railway\bin\Release\Railway.exe.config
+C:\Users\Администратор\Desktop\C#\Railway\Railway\bin\Release\Railway.exe
+C:\Users\Администратор\Desktop\C#\Railway\Railway\bin\Release\Railway.pdb
+C:\Users\Администратор\Desktop\C#\Railway\Railway\obj\Release\Railway.csproj.AssemblyReference.cache
+C:\Users\Администратор\Desktop\C#\Railway\Railway\obj\Release\Railway.csproj.SuggestedBindingRedirects.cache
+C:\Users\Администратор\Desktop\C#\Railway\Railway\obj\Release\Railway.Form1.resources
+C:\Users\Администратор\Desktop\C#\Railway\Railway\obj\Release\Railway.Form2.resources
+C:\Users\Администратор\Desktop\C#\Railway\Railway\obj\Release\Railway.Properties.Resources.resources
+C:\Users\Администратор\Desktop\C#\Railway\Railway\obj\Release\Railway.csproj.GenerateResource.cache
+C:\Users\Администратор\Desktop\C#\Railway\Railway\obj\Release\Railway.csproj.CoreCompileInputs.cache
+C:\Users\Администратор\Desktop\C#\Railway\Railway\obj\Release\Railway.exe
+C:\Users\Администратор\Desktop\C#\Railway\Railway\obj\Release\Railway.pdb

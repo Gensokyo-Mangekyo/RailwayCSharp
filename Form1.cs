@@ -63,8 +63,6 @@ namespace Railway
 
                 if (dialogResult == DialogResult.OK)
                 {
- 
-
                     if (openFileDialog.FileName.StartsWith("\\"))
                     {
                         return openFileDialog.FileName.Remove(openFileDialog.FileName.LastIndexOf('\\'));
@@ -94,6 +92,7 @@ namespace Railway
             }
             var form = new Form2(G);
             form.Show();
+            Hide();
         }
 
         private void button5_Click(object sender, EventArgs e)
