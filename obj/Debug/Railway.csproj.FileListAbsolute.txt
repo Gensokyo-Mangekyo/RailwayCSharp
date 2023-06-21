@@ -9,3 +9,4 @@ C:\Users\Администратор\Desktop\C#\Railway\Railway\bin\Debug\Railway
 C:\Users\Администратор\Desktop\C#\Railway\Railway\bin\Debug\Railway.pdb
 C:\Users\Администратор\Desktop\C#\Railway\Railway\obj\Debug\Railway.exe
 C:\Users\Администратор\Desktop\C#\Railway\Railway\obj\Debug\Railway.pdb
+C:\Users\Администратор\Desktop\C#\Railway\Railway\obj\Debug\Railway.Form2.resources

@@ -61,13 +61,11 @@
             this.listBox1.Font = new System.Drawing.Font("Bell MT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 30;
-            this.listBox1.Items.AddRange(new object[] {
-            "2023-05",
-            "2023-06"});
             this.listBox1.Location = new System.Drawing.Point(12, 37);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(106, 184);
             this.listBox1.TabIndex = 10;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -86,13 +84,12 @@
             this.listBox2.Font = new System.Drawing.Font("Berlin Sans FB", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 30;
-            this.listBox2.Items.AddRange(new object[] {
-            "14"});
             this.listBox2.Location = new System.Drawing.Point(163, 37);
             this.listBox2.Name = "listBox2";
             this.listBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.listBox2.Size = new System.Drawing.Size(106, 184);
             this.listBox2.TabIndex = 12;
+            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
             // listBox3
             // 
@@ -100,9 +97,6 @@
             this.listBox3.Font = new System.Drawing.Font("Berlin Sans FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox3.FormattingEnabled = true;
             this.listBox3.ItemHeight = 26;
-            this.listBox3.Items.AddRange(new object[] {
-            "00_43_55",
-            "00_48_25"});
             this.listBox3.Location = new System.Drawing.Point(421, 37);
             this.listBox3.Name = "listBox3";
             this.listBox3.Size = new System.Drawing.Size(106, 186);
@@ -188,12 +182,14 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(294, 176);
+            this.button1.Font = new System.Drawing.Font("Book Antiqua", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(285, 176);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 45);
+            this.button1.Size = new System.Drawing.Size(121, 45);
             this.button1.TabIndex = 22;
             this.button1.Text = "Копировать";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form2
             // 

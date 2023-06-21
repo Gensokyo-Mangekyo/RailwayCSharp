@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -84,13 +85,25 @@ namespace Railway
             Config.SaveG2(CheckNetworkPath());
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        void SVN(string G,string s)
         {
-            if (Config.G1== null)
+            if (G == null)
             {
-                MessageBox.Show("Не настроен сетевой путь СВН Г1", "Ошибка конфигурации", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(s, "Ошибка конфигурации", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            var form = new Form2(G);
+            form.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            SVN(Config.G1,"Не найден сетевой путь СВН Г1");
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            SVN(Config.G2, "Не найден сетевой путь СВН Г9");
         }
     }
 }
