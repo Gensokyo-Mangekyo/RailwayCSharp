@@ -33,6 +33,7 @@ namespace Railway
                 if (listBox4.Items.Count > 0)
                     listBox4.SelectedItem = listBox4.Items[0];
             }
+            else button3.Enabled = false;
         }
 
         string[] GetNamesDirectory(string directory)
@@ -128,6 +129,19 @@ namespace Railway
             var form = new Form1();
             form.Show();
             Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            listBox4.Items.Clear();
+            if (textBox1.Text == "")
+                listBox4.Items.AddRange(GetNamesDirectory(Startup.configuration.Path));
+            else {
+                listBox4.Items.AddRange(GetNamesDirectory(Startup.configuration.Path).Where(x => x.Contains(textBox1.Text)).ToArray());
+            }
+
+
+            
         }
     }
 }
