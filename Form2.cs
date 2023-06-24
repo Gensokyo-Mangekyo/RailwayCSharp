@@ -81,11 +81,16 @@ namespace Railway
                         Results.Add(listBox3.Items[i].ToString());
                     }
                 }
+                progressBar1.Visible = true;
+                progressBar1.Maximum = Results.Count;
                 foreach (var item in Results)
                 {
                    string file = $"{Path}\\{year}\\{number}\\{cabina}\\{item}.mp4";
                     File.Copy(file, Startup.configuration.Path + "\\" + listBox4.SelectedItem.ToString() + "\\Кабина\\" + $"{item}.mp4");
+                    progressBar1.Value += 1;
                 }
+                progressBar1.Visible = false;
+                progressBar1.Value = 0;
             }
             catch(Exception ex)
             {
